@@ -85,7 +85,8 @@ export class ProTableListComponent implements OnInit {
     public msg: NzMessageService,
     private modalSrv: NzModalService,
     private cdr: ChangeDetectorRef,
-  ) {}
+  ) {
+  }
 
   ngOnInit() {
     this.getData();
