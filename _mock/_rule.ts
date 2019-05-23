@@ -1,4 +1,3 @@
-import { HttpRequest } from '@angular/common/http';
 import { MockRequest } from '@delon/mock';
 
 const list: any[] = [];

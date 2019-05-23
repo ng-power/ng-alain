@@ -8,6 +8,7 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { default as ngLang } from '@angular/common/locales/zh';
 import { NZ_I18N, zh_CN as zorroLang } from 'ng-zorro-antd';
 import { DELON_LOCALE, zh_CN as delonLang } from '@delon/theme';
+
 const LANG = {
   abbr: 'zh',
   ng: ngLang,
@@ -16,6 +17,7 @@ const LANG = {
 };
 // register angular
 import { registerLocaleData } from '@angular/common';
+
 registerLocaleData(LANG.ng, LANG.abbr);
 const LANG_PROVIDES = [
   { provide: LOCALE_ID, useValue: LANG.abbr },
@@ -57,6 +59,7 @@ const GLOBAL_THIRD_MODULES = [];
 
 // #region JSON Schema form (using @delon/form)
 import { JsonSchemaModule } from '@shared/json-schema/json-schema.module';
+
 const FORM_MODULES = [JsonSchemaModule];
 // #endregion
 
@@ -64,6 +67,7 @@ const FORM_MODULES = [JsonSchemaModule];
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { SimpleInterceptor } from '@delon/auth';
 import { DefaultInterceptor } from '@core';
+
 const INTERCEPTOR_PROVIDES = [
   { provide: HTTP_INTERCEPTORS, useClass: SimpleInterceptor, multi: true },
   { provide: HTTP_INTERCEPTORS, useClass: DefaultInterceptor, multi: true },
@@ -72,9 +76,11 @@ const INTERCEPTOR_PROVIDES = [
 
 // #region Startup Service
 import { StartupService } from '@core';
+
 export function StartupServiceFactory(startupService: StartupService): Function {
   return () => startupService.load();
 }
+
 const APPINIT_PROVIDES = [
   StartupService,
   {
@@ -108,7 +114,9 @@ import { LayoutModule } from './layout/layout.module';
     ...GLOBAL_THIRD_MODULES,
     ...FORM_MODULES,
   ],
-  providers: [...LANG_PROVIDES, ...INTERCEPTOR_PROVIDES, ...I18NSERVICE_PROVIDES, ...APPINIT_PROVIDES],
+  providers: [...LANG_PROVIDES,
+    ...INTERCEPTOR_PROVIDES, ...I18NSERVICE_PROVIDES, ...APPINIT_PROVIDES],
   bootstrap: [AppComponent],
 })
-export class AppModule {}
+export class AppModule {
+}

@@ -7,27 +7,7 @@ import { I18NService } from '@core';
 
 @Component({
   selector: 'header-i18n',
-  template: `
-    <nz-dropdown nzPlacement="bottomRight">
-      <div *ngIf="showLangText" nz-dropdown>
-        <i nz-icon nzType="global"></i>
-        {{ 'menu.lang' | translate }}
-        <i nz-icon nzType="down"></i>
-      </div>
-      <i *ngIf="!showLangText" nz-dropdown nz-icon nzType="global"></i>
-      <ul nz-menu>
-        <li
-          nz-menu-item
-          *ngFor="let item of langs"
-          [nzSelected]="item.code === curLangCode"
-          (click)="change(item.code)"
-        >
-          <span role="img" [attr.aria-label]="item.text" class="pr-xs">{{ item.abbr }}</span>
-          {{ item.text }}
-        </li>
-      </ul>
-    </nz-dropdown>
-  `,
+  templateUrl: './i18n.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderI18nComponent {
@@ -46,7 +26,8 @@ export class HeaderI18nComponent {
     private settings: SettingsService,
     @Inject(ALAIN_I18N_TOKEN) private i18n: I18NService,
     @Inject(DOCUMENT) private doc: any,
-  ) {}
+  ) {
+  }
 
   change(lang: string) {
     const spinEl = this.doc.createElement('div');

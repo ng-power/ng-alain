@@ -7,4 +7,5 @@ import { Component } from '@angular/core';
     '[class.alain-fullscreen]': 'true',
   },
 })
-export class LayoutFullScreenComponent {}
+export class LayoutFullScreenComponent {
+}

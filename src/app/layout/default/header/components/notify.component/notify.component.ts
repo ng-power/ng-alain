@@ -8,18 +8,7 @@ import { NoticeItem, NoticeIconList } from '@delon/abc';
  */
 @Component({
   selector: 'header-notify',
-  template: `
-    <notice-icon
-      [data]="data"
-      [count]="count"
-      [loading]="loading"
-      btnClass="alain-default__nav-item"
-      btnIconClass="alain-default__nav-item-icon"
-      (select)="select($event)"
-      (clear)="clear($event)"
-      (popoverVisibleChange)="loadData()"
-    ></notice-icon>
-  `,
+  templateUrl: './notify.component.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderNotifyComponent {
@@ -49,7 +38,8 @@ export class HeaderNotifyComponent {
   count = 5;
   loading = false;
 
-  constructor(private msg: NzMessageService, private cdr: ChangeDetectorRef) {}
+  constructor(private msg: NzMessageService, private cdr: ChangeDetectorRef) {
+  }
 
   private updateNoticeData(notices: NoticeIconList[]): NoticeItem[] {
     const data = this.data.slice();

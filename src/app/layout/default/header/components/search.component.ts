@@ -34,7 +34,8 @@ export class HeaderSearchComponent implements AfterViewInit {
     setTimeout(() => this.qIpt.focus(), 300);
   }
 
-  constructor(private el: ElementRef) {}
+  constructor(private el: ElementRef) {
+  }
 
   ngAfterViewInit() {
     this.qIpt = (this.el.nativeElement as HTMLElement).querySelector('.ant-input') as HTMLInputElement;

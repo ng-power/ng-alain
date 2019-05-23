@@ -13,7 +13,8 @@ import { NzModalService, NzMessageService } from 'ng-zorro-antd';
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderStorageComponent {
-  constructor(private modalSrv: NzModalService, private messageSrv: NzMessageService) {}
+  constructor(private modalSrv: NzModalService, private messageSrv: NzMessageService) {
+  }
 
   @HostListener('click')
   _click() {

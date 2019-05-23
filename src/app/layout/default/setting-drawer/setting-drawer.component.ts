@@ -206,9 +206,11 @@ export class SettingDrawerComponent {
   private loadedLess = false;
 
   collapse = false;
+
   get layout() {
     return this.settingSrv.layout;
   }
+
   data: any = {};
   color: string;
   colors = DEFAULT_COLORS;

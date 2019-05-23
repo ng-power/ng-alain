@@ -1,7 +1,6 @@
 // tslint:disable
 import * as Mock from 'mockjs';
 import { format } from 'date-fns';
-import { deepCopy } from '@delon/util';
 
 // region: mock data
 

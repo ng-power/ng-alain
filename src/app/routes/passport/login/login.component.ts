@@ -34,10 +34,15 @@ export class UserLoginComponent implements OnDestroy {
     public msg: NzMessageService,
   ) {
     this.form = fb.group({
-      userName: [null, [Validators.required, Validators.minLength(4)]],
-      password: [null, Validators.required],
-      mobile: [null, [Validators.required, Validators.pattern(/^1\d{10}$/)]],
-      captcha: [null, [Validators.required]],
+      userName: [
+        null, [Validators.required, Validators.minLength(4)],
+      ],
+      password: [
+        null, Validators.required],
+      mobile: [
+        null, [Validators.required, Validators.pattern(/^1\d{10}$/)]],
+      captcha: [
+        null, [Validators.required]],
       remember: [true],
     });
     modalSrv.closeAll();
@@ -48,12 +53,15 @@ export class UserLoginComponent implements OnDestroy {
   get userName() {
     return this.form.controls.userName;
   }
+
   get password() {
     return this.form.controls.password;
   }
+
   get mobile() {
     return this.form.controls.mobile;
   }
+
   get captcha() {
     return this.form.controls.captcha;
   }
@@ -91,13 +99,15 @@ export class UserLoginComponent implements OnDestroy {
       this.userName.updateValueAndValidity();
       this.password.markAsDirty();
       this.password.updateValueAndValidity();
-      if (this.userName.invalid || this.password.invalid) return;
+      if (this.userName.invalid || this.password.invalid)
+        return;
     } else {
       this.mobile.markAsDirty();
       this.mobile.updateValueAndValidity();
       this.captcha.markAsDirty();
       this.captcha.updateValueAndValidity();
-      if (this.mobile.invalid || this.captcha.invalid) return;
+      if (this.mobile.invalid || this.captcha.invalid)
+        return;
     }
 
     // 默认配置中对所有HTTP请求都会强制 [校验](https://ng-alain.com/auth/getting-started) 用户 Token

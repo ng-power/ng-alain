@@ -14,6 +14,7 @@ import * as screenfull from 'screenfull';
 })
 export class HeaderFullScreenComponent {
   status = false;
+
   private get sf(): screenfull.Screenfull {
     return screenfull as screenfull.Screenfull;
   }
