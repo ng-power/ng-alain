@@ -11,7 +11,8 @@ export class BasicFormComponent implements OnInit {
   form: FormGroup;
   submitting = false;
 
-  constructor(private fb: FormBuilder, private msg: NzMessageService, private cdr: ChangeDetectorRef) {}
+  constructor(private fb: FormBuilder, private msg: NzMessageService, private cdr: ChangeDetectorRef) {
+  }
 
   ngOnInit(): void {
     this.form = this.fb.group({
