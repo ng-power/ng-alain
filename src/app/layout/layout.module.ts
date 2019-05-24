@@ -5,13 +5,13 @@ import { LayoutDefaultComponent } from './default/default.component';
 import { LayoutFullScreenComponent } from './fullscreen/fullscreen.component';
 import { HeaderComponent } from './default/header/header.component';
 import { SidebarComponent } from './default/sidebar/sidebar.component';
-import { HeaderSearchComponent } from './default/header/components/search.component';
+import { HeaderSearchComponent } from './default/header/components/search.component/search.component';
 import { HeaderNotifyComponent } from './default/header/components/notify.component/notify.component';
 import { HeaderTaskComponent } from './default/header/components/task.component/task.component';
 import { HeaderIconComponent } from './default/header/components/icon.component/icon.component';
-import { HeaderFullScreenComponent } from './default/header/components/fullscreen.component';
+import { HeaderFullScreenComponent } from './default/header/components/fullscreen.component/fullscreen.component';
 import { HeaderI18nComponent } from './default/header/components/i18n.component/i18n.component';
-import { HeaderStorageComponent } from './default/header/components/storage.component';
+import { HeaderStorageComponent } from './default/header/components/storage.component/storage.component';
 import { HeaderUserComponent } from './default/header/components/user.component/user.component';
 
 import { SettingDrawerComponent } from './default/setting-drawer/setting-drawer.component';

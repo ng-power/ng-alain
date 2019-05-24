@@ -5,7 +5,7 @@ import { catchError } from 'rxjs/operators';
 import { MenuService, SettingsService, TitleService, ALAIN_I18N_TOKEN } from '@delon/theme';
 import { ACLService } from '@delon/acl';
 import { TranslateService } from '@ngx-translate/core';
-import { I18NService } from '../i18n/i18n.service';
+import { I18NService } from '@core/i18n/i18n.service';
 
 import { NzIconService } from 'ng-zorro-antd';
 import { ICONS_AUTO } from '../../../style-icons-auto';
@@ -65,7 +65,8 @@ export class StartupService {
             this.titleService.default = '';
             this.titleService.suffix = res.app.name;
           },
-          () => {},
+          () => {
+          },
           () => {
             resolve(null);
           },

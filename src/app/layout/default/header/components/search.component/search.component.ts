@@ -2,17 +2,7 @@ import { Component, HostBinding, Input, ElementRef, AfterViewInit, ChangeDetecti
 
 @Component({
   selector: 'header-search',
-  template: `
-    <nz-input-group [nzAddOnBeforeIcon]="focus ? 'arrow-down' : 'search'">
-      <input
-        nz-input
-        [(ngModel)]="q"
-        (focus)="qFocus()"
-        (blur)="qBlur()"
-        [placeholder]="'menu.search.placeholder' | translate"
-      />
-    </nz-input-group>
-  `,
+  templateUrl: `./search.component.html`,
   changeDetection: ChangeDetectionStrategy.OnPush,
 })
 export class HeaderSearchComponent implements AfterViewInit {
