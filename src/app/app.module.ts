@@ -47,7 +47,11 @@ const I18NSERVICE_MODULES = [
   }),
 ];
 
-const I18NSERVICE_PROVIDES = [{ provide: ALAIN_I18N_TOKEN, useClass: I18NService, multi: false }];
+const I18NSERVICE_PROVIDES = [
+  {
+    provide: ALAIN_I18N_TOKEN,
+    useClass: I18NService, multi: false,
+  }];
 
 // #endregion
 
